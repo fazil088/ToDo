@@ -62,7 +62,7 @@ function App() {
                       <p>{value.dateof}   {value.time}</p>
                     </div>  
                     <div className='editing'>
-                    <input value={value.status} type="checkbox" onChange={(e)=>{
+                    <input id='checkId' value={value.status} type="checkbox" onChange={(e)=>{
                       setTodos(todos.filter((obj)=>{
                         if(obj.id === value.id){
                           obj.status = e.target.checked;
@@ -70,6 +70,7 @@ function App() {
                         return obj
                       }))
                     }} />
+                    <label for='checkId'></label>
                     <i className='fa fa-trash' onClick={(e)=>{ removeItem(e) }}></i>
                     </div>
                   </li>
